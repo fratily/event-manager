@@ -1,0 +1,30 @@
+{
+    "name": "fratily/event-manager",
+    "keywords": ["event", "event-manager", "Fratily"],
+    "authors": [
+        {
+            "name": "Kento Oka",
+            "email": "oka.kento0311@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fratily\\EventManager\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fratily\\Tests\\EventManager\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
