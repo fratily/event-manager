@@ -27,7 +27,7 @@ class ListenerTest extends \PHPUnit\Framework\TestCase{
         $callback   = [new \SplQueue(), "enqueue"];
         $priority   = 10;
 
-        $listener   = new Listener($manager, $callback, $priority);
+        $listener   = new Listener($callback, $priority);
 
         $this->assertSame($callback, $listener->getCallback());
         $this->assertSame($priority, $listener->getPriority());
@@ -38,7 +38,7 @@ class ListenerTest extends \PHPUnit\Framework\TestCase{
      */
     public function testIsSame($callback1, $callback2, $expected){
         $manager    = $this->createMock(EventManager::class);
-        $listener   = new Listener($manager, $callback1, 1);
+        $listener   = new Listener($callback1, 1);
 
         $this->assertSame($expected, $listener->isSame($callback2));
     }
@@ -69,7 +69,7 @@ class ListenerTest extends \PHPUnit\Framework\TestCase{
         };
         $priority   = 1;
 
-        $listener   = new Listener($manager, $callback, $priority);
+        $listener   = new Listener($callback, $priority);
 
         $this->assertSame(15, $listener->trigger($event, [1, 2, 4, 8]));
     }

@@ -19,11 +19,6 @@ namespace Fratily\EventManager;
 class Listener{
 
     /**
-     * @var EventManager
-     */
-    private $manager;
-
-    /**
      * @var callback
      */
     private $callback;
@@ -40,8 +35,7 @@ class Listener{
      * @param   callable    $callback
      * @param   int $priority
      */
-    public function __construct(EventManager $manager, callable $callback, int $priority){
-        $this->manager  = $manager;
+    public function __construct(callable $callback, int $priority){
         $this->callback = $callback;
         $this->priority = $priority;
     }

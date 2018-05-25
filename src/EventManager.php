@@ -39,7 +39,7 @@ class EventManager implements EventManagerInterface{
             $this->listeners[$event]    = [];
         }
 
-        $this->listeners[$event][]  = new Listener($this, $callback, $priority);
+        $this->listeners[$event][]  = new Listener($callback, $priority);
 
         return $this;
     }
