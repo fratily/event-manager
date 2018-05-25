@@ -13,7 +13,6 @@
  */
 namespace Fratily\Tests\EventManager;
 
-use Fratily\EventManager\EventManager;
 use Fratily\EventManager\EventInterface;
 use Fratily\EventManager\Listener;
 
@@ -23,7 +22,6 @@ use Fratily\EventManager\Listener;
 class ListenerTest extends \PHPUnit\Framework\TestCase{
 
     public function testInitAndGet(){
-        $manager    = $this->createMock(EventManager::class);
         $callback   = [new \SplQueue(), "enqueue"];
         $priority   = 10;
 
@@ -37,7 +35,6 @@ class ListenerTest extends \PHPUnit\Framework\TestCase{
      * @dataProvider    dataProviderIsSame
      */
     public function testIsSame($callback1, $callback2, $expected){
-        $manager    = $this->createMock(EventManager::class);
         $listener   = new Listener($callback1, 1);
 
         $this->assertSame($expected, $listener->isSame($callback2));
@@ -62,7 +59,6 @@ class ListenerTest extends \PHPUnit\Framework\TestCase{
     }
 
     public function testTrigger(){
-        $manager    = $this->createMock(EventManager::class);
         $event      = $this->createMock(EventInterface::class);
         $callback   = function($event, $a, $b, $c, $d){
             return $a + $b + $c + $d;
