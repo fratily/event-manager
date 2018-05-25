@@ -44,10 +44,12 @@ interface EventInterface{
     /**
      * 指定されたパラメータ値を取得する
      *
-     * @param  string $name
-     * @return mixed
+     * @param   string  $name
+     * @param   mixed   $default
+     * 
+     * @return  mixed
      */
-    public function getParam(string $name);
+    public function getParam(string $name, $default = null);
 
     /**
      * パラメータを設定する
