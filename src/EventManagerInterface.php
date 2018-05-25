@@ -53,7 +53,7 @@ interface EventManagerInterface{
      * @param   string|EventInterface   $event
      * @param   mixed[] $args
      *
-     * @return  bool
+     * @return  mixed
      */
     public function trigger($event, array $args = []);
 }
