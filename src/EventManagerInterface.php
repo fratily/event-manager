@@ -55,5 +55,5 @@ interface EventManagerInterface{
      *
      * @return  bool
      */
-    public function trigger($event, $args = array());
+    public function trigger($event, $args = []);
 }
