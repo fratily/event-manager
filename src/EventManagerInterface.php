@@ -43,7 +43,8 @@ interface EventManagerInterface{
      * 全てのリスナーの登録を解除する
      *
      * @param   string  $event  対象のイベント名
-     * @return void
+     *
+     * @return  $this
      */
     public function clear(string $event);
 
